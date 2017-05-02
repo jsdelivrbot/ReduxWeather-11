@@ -12,9 +12,16 @@ class SearchBar extends Component {
         console.log(event.target.value);
         this.setState({ term: event.target.value });
     }
+    onFormSubmit(event) {
+        // When you use a form tag, use event.PreventDefault to stop page reload
+        event.preventDefault();
+
+        // go and fetch weather data
+        
+    }
     render() {
         return (
-            <form className="input-group">
+            <form onSubmit={this.onFormSubmit}className="input-group">
                 <input 
                     placeholder="Get a five day forecast in your favourite cities"
                     className="form-control"
